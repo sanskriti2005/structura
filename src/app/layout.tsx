@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Structura",
-  description: "Analyze any document and uncover its grammar structure, vocabulary, and sentence patterns in any language.",
+  description:
+    "Analyze any document and uncover its grammar structure, vocabulary, and sentence patterns in any language.",
 };
 
 export default function RootLayout({
@@ -29,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
-        {children}
-        <Footer/>
+        <div className="relative flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        </div>
       </body>
     </html>
   );
